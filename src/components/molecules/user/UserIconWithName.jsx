@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const UserIconWithName = (props) => {
-  const { image, name } = props;
+  const { image, name, isAdmin } = props;
   return (
     <SContainer>
       {/* unsplashから画像を利用する場合 */}
       {/* 「photos/」を削除、unsplashの前に「source.」をつけると画像が表示される。 */}
       <SImage height={160} width={160} src={image} alt={name} />
       <SName>{name}</SName>
+      {isAdmin && <SEdit>編集</SEdit>}
     </SContainer>
   );
 };
@@ -21,8 +22,14 @@ const SImage = styled.img`
 `;
 
 const SName = styled.p`
-  fonc-size: 18px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0;
   color: #40514e;
+`;
+
+const SEdit = styled.span`
+  text-decoration: underline;
+  color: #aaa;
+  cursor: pointer;
 `;
