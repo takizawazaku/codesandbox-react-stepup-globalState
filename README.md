@@ -1,2 +1,2 @@
-# codesandbox-react-stepup-globalState
+# codesandbox-react-stepup-atomicDesign
 Created with CodeSandbox
